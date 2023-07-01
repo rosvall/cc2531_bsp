@@ -7,7 +7,7 @@
 #include "bits.h"
 
 //  R/W    AES encryption and decryption interrupt enable # 0: Interrupt disabled # 1: Interrupt enabled
-SBIT(IEN0_ENCIE,    0xA8, 4);
+SBIT(IEN0_ENCIE, 0xA8, 4);
 
 //  R/W    AES interrupt. ENC has two interrupt flags, ENCIF_1 and ENCIF_0. Setting one of # these flags requests interrupt service. Both flags are set when the AES coprocessor # requests the interrupt. # 0: Interrupt not pending # 1: Interrupt pending
 SBIT(S0CON_ENCIF_0, 0x98, 0);
@@ -16,13 +16,13 @@ SBIT(S0CON_ENCIF_0, 0x98, 0);
 SBIT(S0CON_ENCIF_1, 0x98, 1);
 
 // Encryption Input Data
-SFR(ENCDI,          0xB1);
+SFR(ENCDI, 0xB1);
 
 // Encryption Output Data
-SFR(ENCDO,          0xB2);
+SFR(ENCDO, 0xB2);
 
 // Encryption Control and Status
-SFR(ENCCS,          0xB3);
+SFR(ENCCS, 0xB3);
 #define ENCCS_ST BIT(0)     // (reset=0 R/W1) Start processing command set by CMD. Must be issued for each command or 128-bit block of data. H0 # Cleared by hardware.
 
 // ENCCS_CMD reset=0 R/W Command to be performed when a 1 is written to ST 

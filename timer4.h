@@ -12,7 +12,7 @@ SBIT(TIMIF_T4OVFIF, 0xD8, 3); //  R/W0   Timer 4 overflow interrupt flag
 SBIT(TIMIF_T4CH0IF, 0xD8, 4); //  R/W0   Timer 4 channel 0 interrupt flag
 SBIT(TIMIF_T4CH1IF, 0xD8, 5); //  R/W0   Timer 4 channel 1 interrupt flag
 
-SFR(T4CTL,          0xEB); // Timer 4 Control
+SFR(T4CTL, 0xEB); // Timer 4 Control
 
 // 0 R/W Timer 4 mode. Select the mode as follows:
 #define MASK_T4CTL_MODE BITMASK(2, 0)
@@ -53,8 +53,8 @@ enum T4_DIV {
 	} while (0)
 
 
-SFR(T4CCTL0,        0xEC); // Timer 4 Channel 0 Capture/Compare Control
-SFR(T4CCTL1,        0xEE); // Timer 4 Channel 1 Capture/Compare Control
+SFR(T4CCTL0, 0xEC); // Timer 4 Channel 0 Capture/Compare Control
+SFR(T4CCTL1, 0xEE); // Timer 4 Channel 1 Capture/Compare Control
 
 //  Capture mode select. (Reset=00 R/W)
 #define MASK_T4CCTL_CAP BITMASK(2, 0)
@@ -99,6 +99,6 @@ enum T4CCTL_IM {
 	} while (0)
 
 
-SFR(T4CNT,          0xEA); // Timer 4 Counter
-SFR(T4CC0,          0xED); // Timer 4 Channel 0 Capture or Compare Value
-SFR(T4CC1,          0xEF); // Timer 4 Channel 1 Capture or Compare Value
+SFR(T4CNT, 0xEA); // Timer 4 Counter
+SFR(T4CC0, 0xED); // Timer 4 Channel 0 Capture or Compare Value
+SFR(T4CC1, 0xEF); // Timer 4 Channel 1 Capture or Compare Value

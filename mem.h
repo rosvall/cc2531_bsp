@@ -8,10 +8,10 @@
 
 // Memory Page Select.
 // Sets the high byte of the address for __idata accesses, i.e. the instructions movx @rn,a and movx a,@rn.
-SFR(MPAGE,          0x93);
+SFR(MPAGE, 0x93);
 
 // MEMCTR (0xC7) - Memory Arbiter Control XDATA bank select.
-SFR(MEMCTR,         0xC7);
+SFR(MEMCTR, 0xC7);
 // Controls which code bank of the physical flash memory is
 // mapped into the XDATA region (0x8000-0xFFFF).
 // When set to 0, the root bank is mapped in.
@@ -39,7 +39,7 @@ SFR(MEMCTR,         0xC7);
 #define CODE_TO_XDATA(_code_addr)                                              \
 	(void __xdata *)(((uint16_t)(_code_addr)) | FLASH_MAPPING_IN_XDATA)
 
-#define SFR_TO_XDATA(_sfr_name) \
+#define SFR_TO_XDATA(_sfr_name)                                                \
 	((__xdata uint8_t *)(SFR_MAPPING_IN_XDATA + SFR_ADDR_##_sfr_name))
 
 inline const void __xdata *

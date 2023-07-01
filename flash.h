@@ -8,7 +8,7 @@
 #include "bits.h"
 
 // Flash Bank Map
-SFR(FMAP,           0x9F);
+SFR(FMAP, 0x9F);
 
 /* Page erase.
 	Erase the page that is given by FADDRH[7 (CC2530, CC2531, CC2540, and CC2541) or FADDRH[6 (CC2533).

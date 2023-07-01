@@ -7,12 +7,12 @@
 #include "bits.h"
 
 //  R/W    Port 0 interrupt enable # 0: Interrupt disabled # 1: Interrupt enabled
-SBIT(IEN1_P0IE,     0xB8, 5);
+SBIT(IEN1_P0IE, 0xB8, 5);
 //  R/W    Port 0 interrupt flag # 0: Interrupt not pending # 1: Interrupt pending
-SBIT(IRCON_P0IF,    0xC0, 5);
+SBIT(IRCON_P0IF, 0xC0, 5);
 
 // Port 0 Interrupt Mask
-SFR(P0IEN,          0xAB);
+SFR(P0IEN, 0xAB);
 // ### P0IEN (0xAB) - Port 0 Interrupt Mask
 // reset=0x00 R/W Port P0.7 to P0.0 interrupt enable 
 #define P0IEN_P0_0_IEN BIT(0)
@@ -27,7 +27,7 @@ SFR(P0IEN,          0xAB);
 
 
 // Port 0 Function Select
-SFR(P0SEL,          0xF3);
+SFR(P0SEL, 0xF3);
 // ### P0SEL (0xF3) - Port 0 Function Select
 // Reset=0x00 R/W P0.7 to P0.0 function select 
 #define P0SEL_SELP0_0 BIT(0)
@@ -41,7 +41,7 @@ SFR(P0SEL,          0xF3);
 
 
 // Port 0 Direction
-SFR(P0DIR,          0xFD);
+SFR(P0DIR, 0xFD);
 // ### P0DIR (0xFD) - Port 0 Direction
 // Reset=0x00 R/W P0.7 to P0.0 I/O direction 
 #define P0DIR_DIRP0_0 BIT(0)
@@ -56,7 +56,7 @@ SFR(P0DIR,          0xFD);
 
 
 // Port 0 Input Mode
-SFR(P0INP,          0x8F);
+SFR(P0INP, 0x8F);
 // ### P0INP (0x8F) - Port 0 Input Mode
 // Reset=0x00 R/W P0.7 to P0.0 I/O input mode 
 #define P0INP_MDP0_0 BIT(0)
@@ -71,7 +71,7 @@ SFR(P0INP,          0x8F);
 
 
 // Port 0 Interrupt Status Flag
-SFR(P0IFG,          0x89);
+SFR(P0IFG, 0x89);
 // ### P0IFG (0x89) - Port 0 Interrupt Status Flag
 // Reset=0x00 R/W0 Port 0, inputs 7 to 0 interrupt status flags. When an input port pin has an interrupt request # pending, the corresponding flag bit is set.
 #define P0IFG_P0IF0 BIT(0)
@@ -86,19 +86,19 @@ SFR(P0IFG,          0x89);
 
 
 // Port 0
-SFR(P0,             0x80);
-SBIT(P0_0,          0x80, 0);
-SBIT(P0_1,          0x80, 1);
-SBIT(P0_2,          0x80, 2);
-SBIT(P0_3,          0x80, 3);
-SBIT(P0_4,          0x80, 4);
-SBIT(P0_5,          0x80, 5);
-SBIT(P0_6,          0x80, 6);
-SBIT(P0_7,          0x80, 7);
+SFR(P0, 0x80);
+SBIT(P0_0, 0x80, 0);
+SBIT(P0_1, 0x80, 1);
+SBIT(P0_2, 0x80, 2);
+SBIT(P0_3, 0x80, 3);
+SBIT(P0_4, 0x80, 4);
+SBIT(P0_5, 0x80, 5);
+SBIT(P0_6, 0x80, 6);
+SBIT(P0_7, 0x80, 7);
 
 
 // Port Interrupt Control
-SFR(PICTL,          0x8C);
+SFR(PICTL, 0x8C);
 // ### PICTL (0x8C) - Port Interrupt Control
 //  Port 0, inputs 7 to 0 interrupt configuration. This bit selects the interrupt request condition for all Port # 0 inputs.  (reset=0 R/W)
 #define PICTL_P0ICON BIT(0)
@@ -117,7 +117,7 @@ SFR(PICTL,          0x8C);
 
 
 // Port 1 Input Mode
-SFR(P1INP,          0xF6);
+SFR(P1INP, 0xF6);
 // ### P1INP (0xF6) - Port 1 Input Mode
 // reset=000000 R/W P1.7 to P1.2 I/O input mode 
 #define MASK_P1INP_ BITMASK(6, 2)
@@ -131,7 +131,7 @@ SFR(P1INP,          0xF6);
 
 
 // Port 1 Direction
-SFR(P1DIR,          0xFE);
+SFR(P1DIR, 0xFE);
 // ### P1DIR (0xFE) - Port 1 Direction
 // reset=0x00 R/W P1.7 to P1.0 I/O direction 
 #define P1DIR_DIRP1_0 BIT(0)
@@ -148,7 +148,7 @@ SFR(P1DIR,          0xFE);
 //  R/W    Port 1 interrupt flag # 0: Interrupt not pending # 1: Interrupt pending
 SBIT(IRCON2_P1IF,   0xE8, 3);
 // Port 1-Function Select
-SFR(P1SEL,          0xF4);
+SFR(P1SEL, 0xF4);
 // ### P1SEL (0xF4) - Port 1-Function Select
 // reset=0x00 R/W P1.7 to P1.0 function select 
 #define P1SEL_SELP1_0 BIT(0)
@@ -161,7 +161,7 @@ SFR(P1SEL,          0xF4);
 #define P1SEL_SELP1_7 BIT(7)
 
 // Port 1 Interrupt Status Flag
-SFR(P1IFG,          0x8A);
+SFR(P1IFG, 0x8A);
 // ### P1IFG (0x8A) - Port 1 Interrupt Status Flag
 // reset=0x00 R/W0 Port 1, inputs 7 to 0 interrupt status flags. When an input port pin has an interrupt request # pending, the corresponding flag bit is set.
 #define P1IFG_P1IF0 BIT(0)
@@ -176,7 +176,7 @@ SFR(P1IFG,          0x8A);
 
 
 // Port 1 Interrupt Mask
-SFR(P1IEN,          0x8D);
+SFR(P1IEN, 0x8D);
 // ### P1IEN (0x8D) - Port 1 Interrupt Mask
 // reset=0x00 R/W Port P1.7 to P1.0 interrupt enable 
 #define P1IEN_P1_0_IEN BIT(0)
@@ -191,21 +191,21 @@ SFR(P1IEN,          0x8D);
 
 
 // Port 1
-SFR(P1,             0x90);
-SBIT(P1_0,          0x90, 0);
-SBIT(P1_1,          0x90, 1);
-SBIT(P1_2,          0x90, 2);
-SBIT(P1_3,          0x90, 3);
-SBIT(P1_4,          0x90, 4);
-SBIT(P1_5,          0x90, 5);
-SBIT(P1_6,          0x90, 6);
-SBIT(P1_7,          0x90, 7);
+SFR(P1, 0x90);
+SBIT(P1_0, 0x90, 0);
+SBIT(P1_1, 0x90, 1);
+SBIT(P1_2, 0x90, 2);
+SBIT(P1_3, 0x90, 3);
+SBIT(P1_4, 0x90, 4);
+SBIT(P1_5, 0x90, 5);
+SBIT(P1_6, 0x90, 6);
+SBIT(P1_7, 0x90, 7);
 
 
 //  R/W    Port 2 interrupt flag # 0: Interrupt not pending # 1: Interrupt pending
-SBIT(IRCON2_P2IF,   0xE8, 0);
+SBIT(IRCON2_P2IF, 0xE8, 0);
 // Port 2 Input Mode
-SFR(P2INP,          0xF7);
+SFR(P2INP, 0xF7);
 // ### P2INP (0xF7) - Port 2 Input Mode
 // reset=00000 R/W P2.4 to P2.0 I/O input mode 
 #define MASK_P2INP_ BITMASK(5, 0)
@@ -224,7 +224,7 @@ SFR(P2INP,          0xF7);
 
 
 // Port 2 Direction and Port 0 Peripheral Priority Control
-SFR(P2DIR,          0xFF);
+SFR(P2DIR, 0xFF);
 // ### P2DIR (0xFF) - Port 2 Direction and Port 0 Peripheral Priority Control
 // reset=00000 R/W P2.4 to P2.0 I/O direction 
 #define MASK_P2DIR_ BITMASK(5, 0)
@@ -256,7 +256,7 @@ SFR(P2DIR,          0xFF);
 
 
 // Port 2 Function Select and Port 1 Peripheral Priority Control
-SFR(P2SEL,          0xF5);
+SFR(P2SEL, 0xF5);
 // ### P2SEL (0xF5) - Port 2 Function Select and Port 1 Peripheral Priority Control
 //  P2.0 function select  (reset=0 R/W)
 #define P2SEL_SELP2_0 BIT(0)
@@ -274,7 +274,7 @@ SFR(P2SEL,          0xF5);
 #define P2SEL_PRI3P1 BIT(6)
 
 // Port 2 Interrupt Status Flag
-SFR(P2IFG,          0x8B);
+SFR(P2IFG, 0x8B);
 // ### P2IFG (0x8B) - Port 2 Interrupt Status Flag
 // reset=00000 R/W0 Port 2, inputs 4 to 0 interrupt status flags. When an input port pin has an interrupt request # pending, the corresponding flag bit is set.
 #define P2IFG_P2IF0 BIT(0)
@@ -288,7 +288,7 @@ SFR(P2IFG,          0x8B);
 
 
 // Port 2 Interrupt Mask
-SFR(P2IEN,          0xAC);
+SFR(P2IEN, 0xAC);
 // ### P2IEN (0xAC) - Port 2 Interrupt Mask
 // reset=00000 R/W Port P2.4 to P2.0 interrupt enable 
 #define MASK_P2IEN_ BITMASK(5, 0)
@@ -303,19 +303,19 @@ SFR(P2IEN,          0xAC);
 
 
 // Port 2
-SFR(P2,             0xA0);
-SBIT(P2_0,          0xA0, 0);
-SBIT(P2_1,          0xA0, 1);
-SBIT(P2_2,          0xA0, 2);
-SBIT(P2_3,          0xA0, 3);
-SBIT(P2_4,          0xA0, 4);
+SFR(P2, 0xA0);
+SBIT(P2_0, 0xA0, 0);
+SBIT(P2_1, 0xA0, 1);
+SBIT(P2_2, 0xA0, 2);
+SBIT(P2_3, 0xA0, 3);
+SBIT(P2_4, 0xA0, 4);
 
 
 
 
 // ### PERCFG (0xF1) - Peripheral Control
 // Peripheral Control
-SFR(PERCFG,         0xF1);
+SFR(PERCFG, 0xF1);
 
 // USART 0 I/O location   (reset=0 R/W)
 #define PERCFG_U0CFG BIT(0)

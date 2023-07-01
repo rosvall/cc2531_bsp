@@ -7,7 +7,7 @@
 #include "bits.h"
 
 // ### WDCTL (0xC9) - Watchdog Timer Control
-SFR(WDCTL,          0xC9);
+SFR(WDCTL, 0xC9);
 
 // Reset=00 R/W Timer interval select.
 // These bits select the timer interval, which is defined as a given number
@@ -54,7 +54,7 @@ enum wdctl_mode {
 #define WDCTL_CLR_TIM (1u << 4)  // Clear timer to 0x0000
 
 //  R/W    Watchdog Timer interrupt flag # 0: Interrupt not pending # 1: Interrupt pending
-SBIT(IRCON2_WDTIF,  0xE8, 4);
+SBIT(IRCON2_WDTIF, 0xE8, 4);
 
 #define watchdog_feed()                                                        \
 	{                                                                          \

@@ -8,20 +8,20 @@
 #include "bits.h"
 
 //  R/W    DMA transfer interrupt enable # 0: Interrupt disabled # 1: Interrupt enabled
-SBIT(IEN1_DMAIE,    0xB8, 0);
+SBIT(IEN1_DMAIE, 0xB8, 0);
 
 //  R/W    DMA-complete interrupt flag # 0: Interrupt not pending # 1: Interrupt pending
-SBIT(IRCON_DMAIF,   0xC0, 0);
+SBIT(IRCON_DMAIF, 0xC0, 0);
 
-SFR(DMA1CFGL,       0xD2); // DMA Channel 1-4 Configuration Address Low Byte
-SFR(DMA1CFGH,       0xD3); // DMA Channel 1-4 Configuration Address High Byte
-SFR(DMA0CFGL,       0xD4); // DMA Channel-0 Configuration Address Low Byte
-SFR(DMA0CFGH,       0xD5); // DMA Channel-0 Configuration Address High Byte
+SFR(DMA1CFGL, 0xD2); // DMA Channel 1-4 Configuration Address Low Byte
+SFR(DMA1CFGH, 0xD3); // DMA Channel 1-4 Configuration Address High Byte
+SFR(DMA0CFGL, 0xD4); // DMA Channel-0 Configuration Address Low Byte
+SFR(DMA0CFGH, 0xD5); // DMA Channel-0 Configuration Address High Byte
 
 #define DMA_CHANNEL_COUNT 5
 
 // ### DMAARM (0xD6) - DMA Channel Arm
-SFR(DMAARM,         0xD6);
+SFR(DMAARM, 0xD6);
 // DMA Channel Arm
 #define DMAARM_DMAARM0 BIT(0)  // (reset=0 R/W1) DMA arm channel 0 # This bit must be set in order for any DMA transfers to occur on the channel. For nonrepetitive # transfer modes, the bit is automatically cleared on completion.
 #define DMAARM_DMAARM1 BIT(1)  // (reset=0 R/W1) DMA arm channel 1 # This bit must be set in order for any DMA transfers to occur on the channel. For nonrepetitive # transfer modes, the bit is automatically cleared on completion.
@@ -31,7 +31,7 @@ SFR(DMAARM,         0xD6);
 #define DMAARM_ABORT   BIT(7)  // (reset=0 R0/W) DMA abort. This bit is used to stop ongoing DMA transfers. Writing a 1 to this bit aborts all # channels which are selected by setting the corresponding DMAARM bit to 1.
 
 // ### DMAREQ (0xD7) - DMA Channel Start Request and Status
-SFR(DMAREQ,         0xD7); // DMA Channel Start Request and Status
+SFR(DMAREQ, 0xD7); // DMA Channel Start Request and Status
 #define DMAREQ_DMAREQ0 BIT(0)  // (reset=0 R/W1) H0 DMA transfer request, channel 0 # When set to 1, activate the DMA channel (has the same effect as a single trigger event). This bit # is cleared when DMA transfer is started.
 #define DMAREQ_DMAREQ1 BIT(1)  // (reset=0 R/W1) H0 DMA transfer request, channel 1 # When set to 1, activate the DMA channel (has the same effect as a single trigger event). This bit # is cleared when DMA transfer is started.
 #define DMAREQ_DMAREQ2 BIT(2)  // (reset=0 R/W1) H0 DMA transfer request, channel 2 # When set to 1, activate the DMA channel (has the same effect as a single trigger event). This bit # is cleared when DMA transfer is started.
@@ -39,7 +39,7 @@ SFR(DMAREQ,         0xD7); // DMA Channel Start Request and Status
 #define DMAREQ_DMAREQ4 BIT(4)  // (reset=0 R/W1) H0 DMA transfer request, channel 4 # When set to 1, activate the DMA channel (has the same effect as a single trigger event). This bit # is cleared when DMA transfer is started.
 
 // ### DMAIRQ (0xD1) - DMA Interrupt Flag
-SFR(DMAIRQ,         0xD1); // DMA Interrupt Flag
+SFR(DMAIRQ, 0xD1); // DMA Interrupt Flag
 #define DMAIRQ_DMAIF0 BIT(0)  // (reset=0 R/W0) DMA channel-0 interrupt flag
 #define DMAIRQ_DMAIF1 BIT(1)  // (reset=0 R/W0) DMA channel-1 interrupt flag
 #define DMAIRQ_DMAIF2 BIT(2)  // (reset=0 R/W0) DMA channel-2 interrupt flag

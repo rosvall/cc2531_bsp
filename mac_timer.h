@@ -9,16 +9,16 @@
 
 //  R/W    Timer 2 interrupt enable
 // 0: Interrupt disabled # 1: Interrupt enabled
-SBIT(IEN1_T2IE,     0xB8, 2);
+SBIT(IEN1_T2IE, 0xB8, 2);
 
 //  R/W    Timer 2 interrupt flag.
 // Set to 1 when Timer 2 interrupt occurs and cleared when CPU
 // H0     vectors to the interrupt service routine.
 // 0: Interrupt not pending # 1: Interrupt pending
-SBIT(IRCON_T2IF,    0xC0, 2);
+SBIT(IRCON_T2IF, 0xC0, 2);
 
 // Timer 2 Control Register
-SFR(T2CTRL,         0x94);
+SFR(T2CTRL, 0x94);
 // ### T2CTRL (0x94) - Timer 2 Control Register
 // (reset=0 R/W) Write 1 to start timer, write 0 to stop timer. When read, it returns the last written # value.
 #define T2CTRL_RUN        BIT(0)
@@ -39,7 +39,7 @@ SFR(T2CTRL,         0x94);
 #define T2CTRL_LATCH_MODE BIT(3)  
 
 // Timer 2 Event Configuration
-SFR(T2EVTCFG,       0x9C);
+SFR(T2EVTCFG, 0x9C);
 enum T2EVTCFG {
 	T2EVTCFG_PER      = 0u,
 	T2EVTCFG_CMP1     = 1u,
@@ -55,7 +55,7 @@ enum T2EVTCFG {
 		T2EVTCFG = (T2EVTCFG_##_evt2) << 4 | T2EVTCFG_##_evt1;                 \
 	} while (0)
 
-SFR(T2IRQF,         0xA1); // Timer 2 Interrupt Flags
+SFR(T2IRQF, 0xA1); // Timer 2 Interrupt Flags
 // ### T2IRQF (0xA1) - Timer 2 Interrupt Flags
 // T2IRQF_PERF          (reset=0 R/W0) Set when the Timer 2 counter would have counted to a value equal to t2_per, # but instead wraps to 0.
 // T2IRQF_COMPARE1F     (reset=0 R/W0) Set when the Timer 2 counter counts to the value set at t2_cmp1
@@ -64,7 +64,7 @@ SFR(T2IRQF,         0xA1); // Timer 2 Interrupt Flags
 // T2IRQF_OVF_COMPARE1F (reset=0 R/W0) Set when the Timer 2 overflow counter counts to the value set at Timer 2 # t2ovf_cmp1
 // T2IRQF_OVF_COMPARE2F (reset=0 R/W0) Set when the Timer 2 overflow counter counts to the value set at t2ovf_cmp2
 
-SFR(T2IRQM,         0xA7); // Timer 2 Interrupt Mask
+SFR(T2IRQM, 0xA7); // Timer 2 Interrupt Mask
 // T2IRQM_PERM          (reset=0 R/W) Enables the TIMER2_PER interrupt
 // T2IRQM_COMPARE1M     (reset=0 R/W) Enables the TIMER2_COMPARE1 interrupt
 // T2IRQM_COMPARE2M     (reset=0 R/W) Enables the TIMER2_COMPARE2 interrupt
@@ -80,13 +80,13 @@ enum T2IRQ {
 	T2IRQ_OVF_COMPARE2 = BIT(5),  // TIMER2_OVF_COMPARE2 interrupt bit
 };
 
-SFR(T2M0,           0xA2); // Timer 2 Multiplexed Register 0
-SFR(T2M1,           0xA3); // Timer 2 Multiplexed Register 1
-SFR(T2MOVF0,        0xA4); // Timer 2 Multiplexed Overflow Register 0
-SFR(T2MOVF1,        0xA5); // Timer 2 Multiplexed Overflow Register 1
-SFR(T2MOVF2,        0xA6); // Timer 2 Multiplexed Overflow Register 2
+SFR(T2M0, 0xA2); // Timer 2 Multiplexed Register 0
+SFR(T2M1, 0xA3); // Timer 2 Multiplexed Register 1
+SFR(T2MOVF0, 0xA4); // Timer 2 Multiplexed Overflow Register 0
+SFR(T2MOVF1, 0xA5); // Timer 2 Multiplexed Overflow Register 1
+SFR(T2MOVF2, 0xA6); // Timer 2 Multiplexed Overflow Register 2
 
-SFR(T2MSEL,         0xC3); // Timer 2 Multiplex Select
+SFR(T2MSEL, 0xC3); // Timer 2 Multiplex Select
 // T2MSEL_T2MSEL (Reset=000 R/W)
 // The value of this register selects the internal registers that are modified or read when accessing T2M0 and T2M1.
 

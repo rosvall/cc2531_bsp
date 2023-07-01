@@ -5,14 +5,14 @@
 #pragma once
 #include <compiler.h>
 
-SFR(PCON,           0x87); // Power Mode Control
+SFR(PCON, 0x87); // Power Mode Control
 // (reset=0 R0/W) Power mode control. Writing 1 to this bit forces the device to enter the power mode
 // H0 set by SLEEPCMD.MODE (note that MODE = 0x00 AND IDLE = 1 stops the CPU core activity).
 // This bit is always read as 0.
 // All enabled interrupts clear this bit when active, and the device re-enters active mode.
 #define PCON_IDLE BIT(0)
 
-SFR(SLEEPCMD,       0xBE); // Sleep-Mode Control Command
+SFR(SLEEPCMD, 0xBE); // Sleep-Mode Control Command
 // Reserved. Always write as 1
 #define SLEEPCMD_RES1 BIT(2)
 // ### SLEEPCMD (0xBE) - Sleep-Mode Control Command
@@ -33,7 +33,7 @@ SFR(SLEEPCMD,       0xBE); // Sleep-Mode Control Command
 
 
 
-SFR(SLEEPSTA,       0x9D); // Sleep-Mode Control Status
+SFR(SLEEPSTA, 0x9D); // Sleep-Mode Control Status
 #define SLEEPSTA_CLK32K BIT(0) // (reset=0 R) The 32-kHz clock signal (synchronized to the system clock)
 
 // SLEEPSTA_RST (R) Status bit indicating the cause of the last reset. If there are multiple resets, the register only contains the last event. 
@@ -52,7 +52,7 @@ enum sleepsta_rst {
 };
 
 // Power-Down Signal Mux
-SFR(PMUX,           0xAE);
+SFR(PMUX, 0xAE);
 // ### PMUX (0xAE) - Power-Down Signal Mux
 // DREGSTAPIN reset=000 R/W Digital Voltage Regulator Status Pin. Selects which P1 pin is to be used to output # the DREGSTA signal.
 #define MASK_PMUX_DREGSTAPIN BITMASK(3, 0)

@@ -5,14 +5,14 @@
 #pragma once
 #include <compiler.h>
 
-SBIT(IEN1_T3IE,     0xB8, 3); //  R/W    Timer 3 interrupt enable
-SBIT(IRCON_T3IF,    0xC0, 3); //  R/W    Timer 3 interrupt flag. Set to 1 when Timer 3 interrupt occurs and cleared when CPU # H0     vectors to the interrupt service routine.
-SBIT(TIMIF_T3OVFIF, 0xD8, 0); //  R/W0   Timer 3 overflow interrupt flag
-SBIT(TIMIF_T3CH0IF, 0xD8, 1); //  R/W0   Timer 3 channel 0 interrupt flag
-SBIT(TIMIF_T3CH1IF, 0xD8, 2); //  R/W0   Timer 3 channel 1 interrupt flag
+SBIT(IEN1_T3IE, 0xB8, 3); // R/W Timer 3 interrupt enable
+SBIT(IRCON_T3IF, 0xC0, 3); // R/W/H0 Timer 3 interrupt flag. Set to 1 when Timer 3 interrupt occurs and cleared when CPU vectors to the interrupt service routine.
+SBIT(TIMIF_T3OVFIF, 0xD8, 0); // R/W0 Timer 3 overflow interrupt flag
+SBIT(TIMIF_T3CH0IF, 0xD8, 1); // R/W0 Timer 3 channel 0 interrupt flag
+SBIT(TIMIF_T3CH1IF, 0xD8, 2); // R/W0 Timer 3 channel 1 interrupt flag
 
-SFR(T3CNT,          0xCA); // Timer 3 Counter
-SFR(T3CTL,          0xCB); // Timer 3 Control
+SFR(T3CNT, 0xCA); // Timer 3 Counter
+SFR(T3CTL, 0xCB); // Timer 3 Control
 
 // T3CTL_MODE reset=00 R/W Timer 3 mode. Select the mode as follows: 
 #define MASK_T3CTL_MODE BITMASK(2, 0)
@@ -38,7 +38,7 @@ SFR(T3CTL,          0xCB); // Timer 3 Control
 
 
 
-SFR(T3CCTL0,        0xCC); // Timer 3 Channel 0 Capture or Compare Control
+SFR(T3CCTL0, 0xCC); // Timer 3 Channel 0 Capture or Compare Control
 // ### T3CCTL0 (0xCC) - Timer 3 Channel 0 Capture or Compare Control
 
 // T3CCTL0_CAP reset=00 R/W Capture mode select 
@@ -65,10 +65,9 @@ SFR(T3CCTL0,        0xCC); // Timer 3 Channel 0 Capture or Compare Control
 
 
 
-SFR(T3CC0,          0xCD); // Timer 3 Channel 0 Capture or Compare Value
+SFR(T3CC0, 0xCD); // Timer 3 Channel 0 Capture or Compare Value
 
-SFR(T3CCTL1,        0xCE); // Timer 3 Channel 1 Capture or Compare Control
-// ### T3CCTL1 (0xCE) - Timer 3 Channel 1 Capture or Compare Control
+SFR(T3CCTL1, 0xCE); // Timer 3 Channel 1 Capture or Compare Control
 
 // T3CCTL1_CAP reset=00 R/W Capture mode select 
 #define MASK_T3CCTL1_CAP BITMASK(2, 0)
@@ -90,8 +89,8 @@ SFR(T3CCTL1,        0xCE); // Timer 3 Channel 1 Capture or Compare Control
 #define T3CCTL1_CMP_CLR_ON_CMP_SET_ON_0    (6u << 3) // Clear output on compare, set on 0x00 
 #define T3CCTL1_CMP_INIT_PIN               (7u << 3) // Initialize output pin. CMP[2:0] is not changed
 
-#define T3CCTL1_IM BIT(6)     // (reset=1 R/W) Channel 1 interrupt mask 
+#define T3CCTL1_IM BIT(6) // (reset=1 R/W) Channel 1 interrupt mask 
 
 
-SFR(T3CC1,          0xCF); // Timer 3 Channel 1 Capture or Compare Value
+SFR(T3CC1, 0xCF); // Timer 3 Channel 1 Capture or Compare Value
 
